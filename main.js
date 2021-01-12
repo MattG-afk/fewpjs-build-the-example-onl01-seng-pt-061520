@@ -41,6 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+
 //------------------------------------------------------------------------------
 // Ignore after this point. Used only for demo purposes
 //------------------------------------------------------------------------------
@@ -48,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function mimicServerCall(url="http://mimicServer.example.com", config={}) {
   return new Promise(function(resolve, reject) {
     setTimeout(function() {
-      const isRandomFailure = Math.random() < .2
+      let isRandomFailure = Math.random() < .2
       if (isRandomFailure) {
         reject("Random server error. Try again.");
       } else {
